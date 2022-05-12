@@ -24,7 +24,7 @@ steps:
   inputs:
     gulpFile: 'NodejsWebApp1/gulpfile.js'
     targets: 
-    workingDirectory: 'NodejsWebApp1/'
+    workingDirectory: '$(Build.SourcesDirectory)/NodejsWebApp1'
     gulpjs: 'NodejsWebApp1/gulpfile.js'
     enableCodeCoverage: false
     
