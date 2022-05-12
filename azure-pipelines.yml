@@ -18,7 +18,7 @@ steps:
 - task: Npm@1
   inputs:
     command: 'install'
-    workingDir: '*/NodejsWebApp1/'
+    workingDir: 'Packer-NodeJs-Demo/NodejsWebApp1/'
     
 - task: gulp@0
   inputs:
