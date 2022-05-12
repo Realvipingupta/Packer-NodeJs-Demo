@@ -28,12 +28,11 @@ steps:
     gulpjs: 'NodejsWebApp1/gulpfile.js'
     enableCodeCoverage: false
     
-
 - script: |
     npm install
     npm run build
   displayName: 'npm install and build'
-  
+
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
