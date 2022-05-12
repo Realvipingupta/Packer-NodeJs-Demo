@@ -18,13 +18,13 @@ steps:
 - task: Npm@1
   inputs:
     command: 'install'
-    workingDir: 'Packer-NodeJs-Demo/NodejsWebApp1/'
+    workingDir: '$(Build.SourcesDirectory)/NodejsWebApp1'
     
 - task: gulp@0
   inputs:
     gulpFile: 'NodejsWebApp1/gulpfile.js'
     targets: 
-    workingDirectory: '$(Build.SourcesDirectory)/NodejsWebApp1'
+    workingDirectory: '/NodejsWebApp1/'
     gulpjs: 'NodejsWebApp1/gulpfile.js'
     enableCodeCoverage: false
     
