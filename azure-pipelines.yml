@@ -15,6 +15,25 @@ steps:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
 
+- task: Npm@1
+  inputs:
+    command: 'install'
+    workingDir: '*/NodejsWebApp1/'
+    
+- task: gulp@0
+  inputs:
+    gulpFile: 'NodejsWebApp1/gulpfile.js'
+    targets: 
+    workingDirectory: 'NodejsWebApp1/'
+    gulpjs: 'NodejsWebApp1/gulpfile.js'
+    enableCodeCoverage: false
+    
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
+
 - script: |
     npm install
     npm run build
